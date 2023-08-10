@@ -1,5 +1,5 @@
 .friendMessage {
-
+    text-align: left;
 }
 
 .friendImageAndText {
@@ -7,11 +7,12 @@
 }
 
 .friendImageAndText img {
-
+    height: 50px;
 }
 
 .friendText {
-
+    background: lightblue;
+    color:black;
 }
 
 .friendText:after {
@@ -27,5 +28,9 @@
 }
 
 .friendTime {
-
+    font-size: small;
 }
+
+
+
+

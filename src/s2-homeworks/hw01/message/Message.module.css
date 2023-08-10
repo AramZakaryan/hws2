@@ -1,17 +1,19 @@
 .message {
+    text-align: right;
+
 
 }
 
 .imageAndText {
-
 }
 
 .imageAndText img {
-
+height: 50px;
 }
 
 .text {
-
+background: blue;
+    color:white;
 }
 
 .text:after {
@@ -27,5 +29,14 @@
 }
 
 .time {
-
+    font-size: small;
 }
+
+
+
+
+
+
+
+
+
