@@ -1,7 +1,15 @@
 .input:focus {
+
 }
 
 .input {
+    display: flex;
+    width: 372px;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: #D1D1D1;
 }
 
 .inputWrapper {
@@ -11,10 +19,25 @@
 }
 
 .errorInput {
+    display: flex;
+    width: 372px;
+    height: 36px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    flex-shrink: 0;
+    border-color: #CC1439;
 }
 
 .errorInput:focus {
 }
 
 .error {
+    color: #CC1439;
+    font-family: Montserrat;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
 }

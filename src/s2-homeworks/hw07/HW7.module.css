@@ -1,2 +1,22 @@
 .container {
+    display: flex;
+
+}
+
+.container > div {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+
+}
+
+.container > div > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.container label {
+    margin-bottom: 10px;
 }

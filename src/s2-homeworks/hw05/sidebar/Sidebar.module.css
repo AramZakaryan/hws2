@@ -1,24 +1,81 @@
 .sidebar {
+display: none;
+    flex-direction: column;
+    gap: 40px;
+    width: 317px;
+    height: 100%;
+    padding: 20px;
+    background: #FFF;
+    box-shadow: 0px 1px 2px 0px rgba(29, 33, 38, 0.10), 0px 10px 40px 0px rgba(29, 33, 38, 0.13);
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 .sidebar.open {
+    display: flex;
+    position: absolute;
 }
 
 .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background: #000;
+
 }
 
 .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
 }
 
 .nav a {
+text-decoration: none;
+    color: #000000;
 }
 
 .nav a:hover {
+    color: #58ACFF;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
+.nav a:active {
+    color: #3D6B99;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
 .nav a.active {
+    color: #0059B2;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration-line: underline;
+
 }
 .close {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
 }
 
 .close img {
