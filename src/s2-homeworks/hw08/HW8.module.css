@@ -14,10 +14,16 @@
 }
 
 .thead {
+    background-color: lightgray;
+    font-weight: bold;
 }
 
 .nameCol {
+    width: 20%;
+
 }
 
 .ageCol {
+    width: 20%;
+
 }
