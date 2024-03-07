@@ -1,32 +1,41 @@
 import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {AppStoreType} from './bll/store'
-import {loadingAC} from './bll/loadingReducer'
+import {loadingAC, LoadingActionType} from './bll/loadingReducer'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import s2 from '../../s1-main/App.module.css'
 import {Loader} from './Loader'
+import {Dispatch} from "redux";
 
 /*
-* 1 - в файле loadingReducer.ts дописать типы и логику
-* 2 - получить isLoading из редакса
-* 3 - дописать функцию setLoading
-* 4 - сделать стили в соответствии с дизайном
+* 1 + - в файле loadingReducer.ts дописать типы и логику
+* 2 + - получить isLoading из редакса
+* 3 + - дописать функцию setLoading
+* 4 + - сделать стили в соответствии с дизайном
 * */
 
 const HW10 = () => {
     // useSelector, useDispatch // пишет студент
-    const isLoading = false
+    // const isLoading = false
+    const isLoading = useSelector<AppStoreType, boolean>(state => state.loading.isLoading)
+    const dispatch: Dispatch<LoadingActionType> = useDispatch()
+
 
     const setLoading = () => { // пишет студент // показать крутилку на 1,5 секунд
         // dispatch
+        dispatch({type: "CHANGE_LOADING", isLoading: true})
 
         // setTimeout
+        setTimeout(() => {
+                dispatch({type: "CHANGE_LOADING", isLoading: false})
+            }
+            , 1500)
+
     }
 
     return (
         <div id={'hw10'}>
             <div className={s2.hwTitle}>Homework #10</div>
-
             <div className={s2.hw}>
                 {isLoading ? (
                     <div id={'hw10-loading'}>
