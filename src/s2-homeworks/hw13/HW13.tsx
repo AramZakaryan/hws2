@@ -9,9 +9,9 @@ import error500 from './images/500.svg'
 import errorUnknown from './images/error.svg'
 
 /*
-* 1 - дописать функцию send
-* 2 - дизэйблить кнопки пока идёт запрос
-* 3 - сделать стили в соответствии с дизайном
+* 1 + - дописать функцию send
+* 2 + - дизэйблить кнопки пока идёт запрос
+* 3 + - сделать стили в соответствии с дизайном
 * */
 
 const HW13 = () => {
@@ -36,12 +36,19 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
-                // дописать
+                setText(res.data.errorText)
+                setInfo(res.data.info)
+                //+ дописать
 
             })
             .catch((e) => {
-                // дописать
-
+                console.log(e)
+                let status = e.response.status
+                //+ дописать
+                setCode((status == 400 || status == 500) ? `Ошибка ${status}!` : "Error!")
+                setImage(status == 400 ? error400 : status == 500 ? error500 : errorUnknown)
+                setText((status == 400 || status == 500) ? e.response.data.errorText : e.message)
+                setInfo((status == 400 || status == 500) ? e.response.data.info : e.name)
             })
     }
 
@@ -55,6 +62,8 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
+                        style={{margin: "15px"}}
+                        disabled={info === '...loading'}
                         // дописать
 
                     >
@@ -64,6 +73,9 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
+                        style={{margin: "15px"}}
+                        disabled={info === '...loading'}
+
                         // дописать
 
                     >
@@ -73,6 +85,9 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
+                        style={{margin: "15px"}}
+                        disabled={info === '...loading'}
+
                         // дописать
 
                     >
@@ -82,6 +97,9 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
+                        style={{margin: "15px"}}
+                        disabled={info === '...loading'}
+
                         // дописать
 
                     >
