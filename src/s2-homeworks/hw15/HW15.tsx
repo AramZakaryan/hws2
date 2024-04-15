@@ -9,8 +9,8 @@ import SuperSort from './common/c10-SuperSort/SuperSort'
 /*
 * 1 + - дописать SuperPagination
 * 2 + - дописать SuperSort
-* 3 - проверить pureChange тестами
-* 3 +?- - дописать sendQuery, onChangePagination, onChangeSort в HW15
+* 3 + проверить pureChange тестами
+* 3 +++ - дописать sendQuery, onChangePagination, onChangeSort в HW15
 * 4 - сделать стили в соответствии с дизайном
 * 5 - добавить HW15 в HW5/pages/JuniorPlus
 * */
@@ -47,6 +47,8 @@ const HW15 = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
+    console.log(techs)
+
     const sendQuery = (params: any) => {
         setLoading(true)
         getTechs(params)
@@ -78,10 +80,15 @@ const HW15 = () => {
     const onChangeSort = (newSort: string) => {
         // делает студент
 
-        // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
+        setSort(newSort)
+        // + setSort(
+        setPage(1)
+        // + setPage(1) // при сортировке сбрасывать на 1 страницу
 
+        sendQuery({page: 1, count, sort:newSort})
         // sendQuery(
+
+        setSearchParams(new URLSearchParams({page: "1", count:count.toString(), sort:newSort}))
         // setSearchParams(
 
         //
